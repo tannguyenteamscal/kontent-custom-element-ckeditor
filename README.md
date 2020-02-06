@@ -1,6 +1,6 @@
 # CK Editor Custom Element for Kentico Kontent
 
-This is a [custom element](https://docs.kontent.ai/tutorials/develop-apps/integrate/integrating-your-own-content-editing-features){:target="_blank"} for [Kentico Kontent](https://kontent.ai){:target="_blank"} that allows users to generate rich text output in a form of HTML via the popular CK Editor. The editor is capable of loading any valid HTML input, the output value is also being saved as pure HTML. 
+This is a [custom element](https://docs.kontent.ai/tutorials/develop-apps/integrate/integrating-your-own-content-editing-features) for [Kentico Kontent](https://kontent.ai) that allows users to generate rich text output in a form of HTML via the popular CK Editor. The editor is capable of loading any valid HTML input, the output value is also being saved as pure HTML. 
 
 ![Screenshot of custom element](ckeditor.png)
 
@@ -20,7 +20,7 @@ Editor allows users to link already created content items in a form of hyperlink
 
 The link is being generated from the `itemUrlMacro` (see [parameters section](#json-parameters)), where it replaces the `{codename}` parameter for the codename of the selected content item. If the linked content item is removed or has its codename changed, the hyperlink won't be automatically updated and will break - all changes have to be propagated manually!
 
-## JSON Parameters
+# JSON Parameters
 There are two JSON Parameters accepted by the element. 
 1. The `itemUrlMacro` is being discussed above and is used to create absolute hyperlinks from selected content items. This parameter is required once you plan on using this functionality.
 2. The `toolbar` parameter is optional and lets you completely customize the editor's toolbar. If no toolbar parameter is present, the editor will use its default one containing all the options provided below. 
@@ -127,14 +127,4 @@ There are two JSON Parameters accepted by the element.
 ```
 
 ## What is Saved?
-<!--The JSON object returned from the Deliver API matches the following signature:
-
-```Json
-{
-  "sample" : "This is a sample of the value your custom element saves",
-  "complex": {
-    "canBeComplex":true
-  }
-}
-```-->
 The value of the custom element always corresponds to its source HTML. It can be viewed by clicking the `Source` button on the editor's toolbar, if present. 
