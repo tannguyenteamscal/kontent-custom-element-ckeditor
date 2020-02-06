@@ -1,6 +1,6 @@
 # CK Editor Custom Element for Kentico Kontent
 
-This is a [custom element](https://docs.kontent.ai/tutorials/develop-apps/integrate/integrating-your-own-content-editing-features){:target="_blank"} for [Kentico Kontent](https://kontent.ai){:target="_blank"} that allows users to generate rich text output in a form of HTML via the popular CK Editor. The editor is capable of loading any valid HTML input, the output value is also being saved as pure HTML. 
+This is a [custom element](https://docs.kontent.ai/tutorials/develop-apps/integrate/integrating-your-own-content-editing-features) for [Kentico Kontent](https://kontent.ai) that allows users to generate rich text output in a form of HTML via the popular CK Editor. The editor is capable of loading any valid HTML input, the output value is also being saved as pure HTML. 
 
 ![Screenshot of custom element](ckeditor.png)
 
@@ -21,11 +21,11 @@ Editor allows users to link already created content items in a form of hyperlink
 The link is being generated from the `itemUrlMacro` (see [parameters section](#json-parameters)), where it replaces the `{codename}` parameter for the codename of the selected content item. If the linked content item is removed or has its codename changed, the hyperlink won't be automatically updated and will break - all changes have to be propagated manually!
 
 ## Setup
-The editor is currently being hosted at [https://ckeditor.app.kontent.ai/](https://ckeditor.app.kontent.ai){:target="_blank"}
+The editor is currently being hosted at `https://ckeditor.app.kontent.ai/`
 <!-- 1. Deploy the code to a secure public host
     * See [deploying section](#Deploying) for a really quick option-->
-* Follow the instructions in the [Kentico Kontent documentation](https://docs.kontent.ai/tutorials/develop-apps/integrate/integrating-your-own-content-editing-features#a-3--displaying-a-custom-element-in-kentico-kontent){:target="_blank"} to add the element to a content model.
-    * The `Hosted code URL` is [https://ckeditor.app.kontent.ai]
+* Follow the instructions in the [Kentico Kontent documentation](https://docs.kontent.ai/tutorials/develop-apps/integrate/integrating-your-own-content-editing-features#a-3--displaying-a-custom-element-in-kentico-kontent) to add the element to a content model.
+    * The `Hosted code URL` is `https://ckeditor.app.kontent.ai`
     * If necessary, pass the necessary parameters as directing in the [JSON Parameters configuration](#json-parameters) section of this readme.
 
 <!--## Deploying-->
