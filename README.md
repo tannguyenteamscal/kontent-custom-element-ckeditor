@@ -151,4 +151,4 @@ There are two JSON Parameters accepted by the element.
   }
 }
 ```-->
-The value of the custom element always corresponds to it's source HTML. It can be viewed by clicking the `Source` button on the editor's toolbar, if present. 
+The value of the custom element always corresponds to its source HTML. It can be viewed by clicking the `Source` button on the editor's toolbar, if present. 
