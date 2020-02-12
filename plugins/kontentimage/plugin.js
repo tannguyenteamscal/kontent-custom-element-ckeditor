@@ -419,7 +419,7 @@
 				}
 
 				// Update data.link object with attributes if the link has been discovered.
-				if ( editor.plugins.link && this.parts.link ) {
+				if ( editor.plugins.kontentlink && this.parts.link ) {
 					data.link = helpers.getLinkAttributesParser()( editor, this.parts.link );
 
 					// Get rid of cke_widget_* classes in data. Otherwise
@@ -798,13 +798,13 @@
 
 		/**
 		 * Returns an attribute getter function. Default getter comes from the Link plugin
-		 * and is documented by {@link CKEDITOR.plugins.link#getLinkAttributes}.
+		 * and is documented by {@link CKEDITOR.plugins.kontentlink#getLinkAttributes}.
 		 *
 		 * **Note:** It is possible to override this method and use a custom getter e.g.
 		 * in the absence of the Link plugin.
 		 *
 		 * **Note:** If a custom getter is used, a data model format it produces
-		 * must be compatible with {@link CKEDITOR.plugins.link#getLinkAttributes}.
+		 * must be compatible with {@link CKEDITOR.plugins.kontentlink#getLinkAttributes}.
 		 *
 		 * **Note:** A custom getter must understand the data model format produced by
 		 * {@link #getLinkAttributesParser} to work correctly.
@@ -814,12 +814,12 @@
 		 */
 		getLinkAttributesGetter: function() {
 			// https://dev.ckeditor.com/ticket/13885
-			return CKEDITOR.plugins.link.getLinkAttributes;
+			return CKEDITOR.plugins.kontentlink.getLinkAttributes;
 		},
 
 		/**
 		 * Returns an attribute parser function. Default parser comes from the Link plugin
-		 * and is documented by {@link CKEDITOR.plugins.link#parseLinkAttributes}.
+		 * and is documented by {@link CKEDITOR.plugins.kontentlink#parseLinkAttributes}.
 		 *
 		 * **Note:** It is possible to override this method and use a custom parser e.g.
 		 * in the absence of the Link plugin.
@@ -828,7 +828,7 @@
 		 * must be compatible with {@link #getLinkAttributesGetter}.
 		 *
 		 * **Note:** If a custom parser is used, it should be compatible with the
-		 * {@link CKEDITOR.plugins.link#parseLinkAttributes} data model format. Otherwise the
+		 * {@link CKEDITOR.plugins.kontentlink#parseLinkAttributes} data model format. Otherwise the
 		 * Link plugin dialog may not be populated correctly with parsed data. However
 		 * as long as Enhanced Image is **not** used with the Link plugin dialog, any custom data model
 		 * will work, being stored as an internal property of Enhanced Image widget's data only.
@@ -838,7 +838,7 @@
 		 */
 		getLinkAttributesParser: function() {
 			// https://dev.ckeditor.com/ticket/13885
-			return CKEDITOR.plugins.link.parseLinkAttributes;
+			return CKEDITOR.plugins.kontentlink.parseLinkAttributes;
 		}
 	};
 
@@ -1452,7 +1452,7 @@
 
 	function linkCommandIntegrator( editor ) {
 		// Nothing to integrate with if link is not loaded.
-		if ( !editor.plugins.link )
+		if ( !editor.plugins.kontentlink )
 			return;
 
 		var listener = CKEDITOR.on( 'dialogDefinition', function( evt ) {

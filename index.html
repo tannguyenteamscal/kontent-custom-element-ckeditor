@@ -13,30 +13,10 @@
     <!-- Custom element HTML -->
     <form>
       <textarea name="editor1" id="editor1" rows="10" cols="80">
-        <p>This is my textarea to be replaced with CKEditor.</p>
-
-        <p>This is my textarea to be replaced with CKEditor.</p>
-
-        <p>This is my textarea to be replaced with CKEditor.</p>
-
-        <p>This is my textarea to be replaced with CKEditor.</p>
-
-        <p>This is my textarea to be replaced with CKEditor.</p>
-
-        <p>This is my textarea to be replaced with CKEditor.</p>
-
-        <p>This is my textarea to be replaced with CKEditor.</p>
-
-        <p>This is my textarea to be replaced with CKEditor.</p>
-
-        <p>This is my textarea to be replaced with CKEditor.</p>
-
-        <p>This is my textarea to be replaced with CKEditor.</p>
-
-        <p>This is my textarea to be replaced with CKEditor.</p>
-
       </textarea>
       <script>
+        let item_url_macro = "domain.com/{codename}";
+
         CustomElement.init((element, context) => {
           CKEDITOR.disableAutoInline = true;
 
@@ -46,11 +26,17 @@
             "plugin.js"
           );
 
+          CKEDITOR.plugins.addExternal(
+            "kontentlink",
+            "/plugins/kontentlink/",
+            "plugin.js"
+          );
+
           ckeditor = CKEDITOR.replace("editor1", {
             skin: "moono-lisa",
             customConfig: "/config.js",
-            extraPlugins: "autogrow,sourcedialog,kontentimage",
-            removePlugins: "sourcearea,image",
+            extraPlugins: "autogrow,sourcedialog,kontentimage,kontentlink",
+            removePlugins: "sourcearea,image,link",
             allowedContent: true,
             autoGrow_minHeight: 100,
             autoGrow_onStartup: true,
