@@ -40,10 +40,16 @@
         CustomElement.init((element, context) => {
           CKEDITOR.disableAutoInline = true;
 
+          CKEDITOR.plugins.addExternal(
+            "kontentimage",
+            "/plugins/kontentimage/",
+            "plugin.js"
+          );
+
           ckeditor = CKEDITOR.replace("editor1", {
             skin: "moono-lisa",
             customConfig: "/config.js",
-            extraPlugins: "autogrow,sourcedialog",
+            extraPlugins: "autogrow,sourcedialog,kontentimage",
             removePlugins: "sourcearea,image",
             allowedContent: true,
             autoGrow_minHeight: 100,
