@@ -7,8 +7,126 @@
     <link rel="stylesheet" href="custom-element.css" />
     <!-- Kentico Custom elements API-->
     <script src="https://app.kontent.ai/js-api/custom-element/v1/custom-element.min.js"></script>
+    <script src="https://cdn.ckeditor.com/4.13.1/full-all/ckeditor.js"></script>
   </head>
   <body>
     <!-- Custom element HTML -->
+    <form>
+      <textarea name="editor1" id="editor1" rows="10" cols="80">
+        <p>This is my textarea to be replaced with CKEditor.</p>
+
+        <p>This is my textarea to be replaced with CKEditor.</p>
+
+        <p>This is my textarea to be replaced with CKEditor.</p>
+
+        <p>This is my textarea to be replaced with CKEditor.</p>
+
+        <p>This is my textarea to be replaced with CKEditor.</p>
+
+        <p>This is my textarea to be replaced with CKEditor.</p>
+
+        <p>This is my textarea to be replaced with CKEditor.</p>
+
+        <p>This is my textarea to be replaced with CKEditor.</p>
+
+        <p>This is my textarea to be replaced with CKEditor.</p>
+
+        <p>This is my textarea to be replaced with CKEditor.</p>
+
+        <p>This is my textarea to be replaced with CKEditor.</p>
+
+      </textarea>
+      <script>
+        CustomElement.init((element, context) => {
+          CKEDITOR.disableAutoInline = true;
+
+          ckeditor = CKEDITOR.replace("editor1", {
+            skin: "moono-lisa",
+            customConfig: "/config.js",
+            extraPlugins: "autogrow,sourcedialog",
+            removePlugins: "sourcearea,image",
+            allowedContent: true,
+            autoGrow_minHeight: 100,
+            autoGrow_onStartup: true,
+            autoGrow_maxHeight: 450,
+            customJsImageBrowser: true, // use our custom asset selector as image browser
+            customJsImageMethod: selectAndGetAsset, // promise returning the images URL,
+            customJsLinkBrowser: true,
+            customJsLinkMethod: selectAndGetItem
+          });
+
+          ckeditor.on("resize", updateElementHeight);
+
+          ckeditor.on("instanceReady", function() {
+            // // update editors position
+            // repositionEditor();
+
+            // // setup readonly on disable
+            // CustomElement.onDisabledChanged(readonly => {
+            //   editor.setReadOnly(readonly);
+            // });
+
+            // // load data and view them in the editor
+            // editor.setData(element.value);
+
+            // // resizes editor to initial height
+            updateElementHeight();
+          });
+        });
+
+        /* Resizes custom element iframe based on document height. Won't pass MAX_HEIGHT. */
+        function updateElementHeight() {
+          const height = Math.max(
+            document.body.scrollHeight,
+            document.body.offsetHeight,
+            document.documentElement.offsetHeight
+          );
+          CustomElement.setHeight(height);
+        }
+
+        /* Displays asset selector and returns URL of the selected asset */
+        function selectAndGetAsset() {
+          return new Promise((resolve, reject) => {
+            CustomElement.selectAssets({
+              allowMultiple: false,
+              fileType: "images"
+            }).then(results => {
+              if (results.length > 0) {
+                CustomElement.getAssetDetails(results.map(e => e.id)).then(
+                  assets => {
+                    if (assets[0]) resolve(assets[0].url);
+                    resolve(null);
+                  }
+                );
+              }
+            });
+          });
+        }
+
+        /* Displays content item selector and returns url of the selected content item */
+        function selectAndGetItem() {
+          return new Promise((resolve, reject) => {
+            CustomElement.selectItems({ allowMultiple: false }).then(
+              results => {
+                if (results.length > 0) {
+                  CustomElement.getItemDetails(results.map(e => e.id)).then(
+                    items => {
+                      if (items[0])
+                        resolve(
+                          item_url_macro.replace(
+                            "{codename}",
+                            items[0].codename
+                          )
+                        );
+                      resolve(null);
+                    }
+                  );
+                }
+              }
+            );
+          });
+        }
+      </script>
+    </form>
   </body>
 </html>
