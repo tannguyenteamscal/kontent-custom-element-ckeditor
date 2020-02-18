@@ -1,3 +1,16 @@
+Kontent Image and Link plugins:
+
+The "kontentimage" and "kontentlink" source code are modifed versions of the
+"image" and "link" CKEditor plugins and are licensed under the more
+restrictive Mozilla Public License Version 1.1
+(http://www.mozilla.org/MPL/MPL-1.1.html). For more details on their licenses,
+see https://ckeditor.com/legal/ckeditor-oss-license
+
+Remaining Code:
+
+The remaining portions of code not specified above are licensed under the MIT
+license specified below.
+
 MIT License
 
 Copyright (c) 2019 Kentico
