@@ -60,6 +60,9 @@
 
       /* on editor load */
       ckeditor.on("instanceReady", function () {
+        // reposition so there are no unnecessary toolbars
+        document.getElementById("cke_editor").style.margin = "-2px 0px 0px -2px";
+
         // setup readonly on disable
         CustomElement.onDisabledChanged(readonly => {
           ckeditor.setReadOnly(readonly);
@@ -85,9 +88,9 @@
 
     /* Saves custom element value */
     function save(ckeditor) {
-      let data = editor.getData();
+      let data = ckeditor.getData();
       // if the editor contains invisible tags save empty (so required flag is not triggered)
-      if (data.replace(/<[^>]*>?/gm, '') === "") data = "";
+      if (data.replace(/<[^>]*(>|$)|&nbsp;|&zwnj;|&raquo;|&laquo;|&gt;|\s/g, '') == "") data = null;
       CustomElement.setValue(data);
     }
 
