@@ -22,6 +22,8 @@ CKEDITOR.editorConfig = function (config) {
 	config.youtube_privacy = true;
 	config.youtube_width = '640';
 	config.youtube_height = '480';
+	config.allowedContent = true;
 
-	config.removeButtons = 'NewPage,Preview,Print,Templates,Form,Checkbox,Radio,TextField,Textarea,Select,Button,ImageButton,HiddenField,CopyFormatting,RemoveFormat,BidiLtr,BidiRtl,Language,Flash,PageBreak,Iframe,Styles,About,Save,CreateDiv,Maximize';
+
+	config.removeButtons = 'NewPage,Preview,Print,Templates,Form,Checkbox,Radio,TextField,Textarea,Select,Button,ImageButton,HiddenField,CopyFormatting,RemoveFormat,BidiLtr,BidiRtl,Language,Flash,PageBreak,Styles,About,Save,CreateDiv,Maximize';
 };
