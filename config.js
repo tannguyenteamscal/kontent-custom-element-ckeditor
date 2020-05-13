@@ -16,6 +16,12 @@ CKEDITOR.editorConfig = function (config) {
 		{ name: 'others', groups: ['others'] },
 		{ name: 'about', groups: ['about'] }
 	];
+	config.extraPlugins = 'youtube';
+	config.youtube_responsive = true;
+	config.youtube_autoplay = false;
+	config.youtube_privacy = true;
+	config.youtube_width = '640';
+	config.youtube_height = '480';
 
 	config.removeButtons = 'NewPage,Preview,Print,Templates,Form,Checkbox,Radio,TextField,Textarea,Select,Button,ImageButton,HiddenField,CopyFormatting,RemoveFormat,BidiLtr,BidiRtl,Language,Flash,PageBreak,Iframe,Styles,About,Save,CreateDiv,Maximize';
 };
