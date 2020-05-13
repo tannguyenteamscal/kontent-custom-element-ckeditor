@@ -1,5 +1,5 @@
 CKEDITOR.editorConfig = function (config) {
-	config.toolbarGroups = [
+	config.toolbar = [
 		'Youtube','youtube',
 		{ name: 'document', groups: ['mode', 'document', 'doctools'] },
 		{ name: 'clipboard', groups: ['clipboard', 'undo'] },
