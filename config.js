@@ -8,7 +8,7 @@ CKEDITOR.editorConfig = function (config) {
 		{ name: 'basicstyles', groups: ['basicstyles', 'cleanup'] },
 		{ name: 'paragraph', groups: ['list', 'indent', 'blocks', 'align', 'bidi', 'paragraph'] },
 		{ name: 'links', groups: ['links'] },
-		{ name: 'insert', groups: ['insert'] },
+		{ name: 'insert', groups: ['insert','Youtube'] },
 		'/',
 		{ name: 'styles', groups: ['styles'] },
 		{ name: 'colors', groups: ['colors'] },
