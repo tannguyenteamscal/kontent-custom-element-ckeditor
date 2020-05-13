@@ -17,6 +17,8 @@ CKEDITOR.editorConfig = function (config) {
 		{ name: 'others', groups: ['others'] },
 		{ name: 'about', groups: ['about'] }
 	];
+	config.toolbar = ['youtube'];
+
 	config.extraPlugins = 'youtube';
 	config.youtube_responsive = true;
 	config.youtube_autoplay = false;
