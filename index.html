@@ -29,13 +29,23 @@
           "/plugins/kontentlink/",
           "plugin.js"
         );
-
+        CKEDITOR.plugins.addExternal(
+          "youtube",
+          "/plugins/youtube/",
+          "plugin.js"
+        );
         let config = {
           skin: "moono-lisa",
           customConfig: "/config.js",
           extraPlugins:
-            "autogrow,sourcedialog,kontentimage,kontentlink",
+            "autogrow,sourcedialog,kontentimage,kontentlink,youtube",
           removePlugins: "sourcearea,resize,image,elementspath,link",
+          youtube_responsive: true,
+          youtube_autoplay: false,
+          youtube_privacy: true,
+          youtube_width: "640",
+          youtube_height: "480",
+          allowedContent: true,
 
           allowedContent: true,
           autoGrow_minHeight: 100,
