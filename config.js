@@ -1,5 +1,6 @@
 CKEDITOR.editorConfig = function (config) {
 	config.toolbarGroups = [
+		'Youtube','youtube',
 		{ name: 'document', groups: ['mode', 'document', 'doctools'] },
 		{ name: 'clipboard', groups: ['clipboard', 'undo'] },
 		{ name: 'editing', groups: ['find', 'selection', 'spellchecker', 'editing'] },
@@ -17,7 +18,6 @@ CKEDITOR.editorConfig = function (config) {
 		{ name: 'others', groups: ['others'] },
 		{ name: 'about', groups: ['about'] }
 	];
-	config.toolbar = ['youtube'];
 
 	config.extraPlugins = 'youtube';
 	config.youtube_responsive = true;
