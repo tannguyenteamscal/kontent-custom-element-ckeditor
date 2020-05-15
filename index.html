@@ -34,11 +34,16 @@
           "/plugins/youtube/",
           "plugin.js"
         );
+        CKEDITOR.plugins.addExternal(
+          "locationmap",
+          "/plugins/locationmap_2.1_0/",
+          "plugin.js"
+        );
         let config = {
           skin: "moono-lisa",
           customConfig: "/config.js",
           extraPlugins:
-            "autogrow,sourcedialog,kontentimage,kontentlink,youtube",
+            "autogrow,sourcedialog,kontentimage,kontentlink,youtube,locationmap",
           removePlugins: "sourcearea,resize,image,elementspath,link",
           youtube_responsive: true,
           youtube_autoplay: false,
